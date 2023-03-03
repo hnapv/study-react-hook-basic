@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 // import { connect } from "react-redux"
 import axios from "axios"
 
@@ -10,6 +10,7 @@ import {
 // import store from './redux/store';
 import { useSelector,useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import Home from './components/Home';
 
 
 function App(props) {
@@ -37,15 +38,16 @@ const name = useSelector(state => state.counter.name)
   }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header"> */}
+        {/* <img src={logo} className="App-logo" alt="logo" />
         <h1>Hello world with React and {name}!</h1>
         <div>Count: {newCount}</div>
 
         <button onClick={() => handleIncrease()}>Increase Count</button>
 
-        <button onClick={() => handleDecrease()}>Decrease Count</button>
-      </header>
+        <button onClick={() => handleDecrease()}>Decrease Count</button> */}
+        <Home/>
+      {/* </header> */}
     </div>
   );
 }
