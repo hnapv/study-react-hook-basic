@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 // import axios from "axios"
 import Table from 'react-bootstrap/Table';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllUser } from '../action/actions';
+import { deleteUser, fetchAllUser } from '../action/actions';
 const TableUser = (props) => {
 
     const dispatch = useDispatch()
@@ -24,8 +24,8 @@ const TableUser = (props) => {
         dispatch(fetchAllUser())
     }, [])
 
-    const handleDeleteUser = () => {
-        console.log("test delete")
+    const handleDeleteUser = (a) => {
+        dispatch(deleteUser(a))
     }
 
     return (
@@ -55,9 +55,7 @@ const TableUser = (props) => {
                                                     <td>{a.email}</td>
                                                     <td>{a.username}</td>
                                                     <td>
-                                                        <button variant="primary">View</button>
-                                                        <button variant="warning">Update</button>
-                                                        <button variant="danger" onClick={() => handleDeleteUser()}>Delete</button>
+                                                        <button className='btn btn-warning' onClick={() => handleDeleteUser(a.id)}>Delete</button>
                                                     </td>
                                                 </tr>
                                             )
