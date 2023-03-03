@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 // import './App.css';
 // import { connect } from "react-redux"
-import axios from "axios"
 
 import {
   increaseCounter,
@@ -9,7 +8,6 @@ import {
 } from "./action/actions"
 // import store from './redux/store';
 import { useSelector,useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import Home from './components/Home';
 
 
@@ -23,15 +21,7 @@ const name = useSelector(state => state.counter.name)
     dispatch(increaseCounter())
   }
 
-  const fetchAllUser = async ()=>{
-    const res = await axios.get("http://localhost:8080/users/all")
-    const data = res && res.data ? res.data:[]
-    console.log("Check data =>>",data)
-  }
 
-  useEffect(()=>{
-    fetchAllUser()
-  },[])
 
   const handleDecrease= ()=>{
     dispatch(decreaseCounter())
