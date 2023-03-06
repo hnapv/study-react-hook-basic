@@ -1,5 +1,5 @@
 import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import { useSelector, useDispatch } from 'react-redux'
 import { decrement, increment } from './redux/slices/counterSlice'
 import { useEffect, useState } from 'react';
@@ -22,7 +22,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
         {fetchAllUsers()}
         {/* <h1>Hello world with React and Hoi Dan IT!</h1>
        <div className='btn-actions'>

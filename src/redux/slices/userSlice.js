@@ -31,6 +31,7 @@ export const userSlice = createSlice({
                 state.isError= false
             })
             .addCase(fetchAllUsers.fulfilled, (state, action) => {
+                console.log("action",action)
                 // Add user to the state array
                 state.listUsers= action.payload
                 state.isLoading= false
